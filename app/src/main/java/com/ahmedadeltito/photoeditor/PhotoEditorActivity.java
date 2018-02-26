@@ -32,7 +32,7 @@ import com.ahmedadeltito.photoeditorsdk.BrushDrawingView;
 import com.ahmedadeltito.photoeditorsdk.OnPhotoEditorSDKListener;
 import com.ahmedadeltito.photoeditorsdk.PhotoEditorSDK;
 import com.ahmedadeltito.photoeditorsdk.ViewType;
-import com.viewpagerindicator.PageIndicator;
+import com.rd.PageIndicatorView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -95,7 +95,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         bottomShadowRelativeLayout = (RelativeLayout) findViewById(R.id.bottom_parent_rl);
 
         ViewPager pager = (ViewPager) findViewById(R.id.image_emoji_view_pager);
-        PageIndicator indicator = (PageIndicator) findViewById(R.id.image_emoji_indicator);
+        PageIndicatorView indicator = (PageIndicatorView) findViewById(R.id.image_emoji_indicator);
 
         photoEditImageView.setImageBitmap(bitmap);
 
