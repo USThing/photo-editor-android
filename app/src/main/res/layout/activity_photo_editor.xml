@@ -57,6 +57,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_border_text_view"
                 android:padding="10dp"
                 android:shadowColor="#000000"
                 android:shadowDx="1"
@@ -75,6 +76,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_toStartOf="@+id/done_drawing_tv"
+                android:background="@drawable/rounded_border_text_view"
                 android:padding="10dp"
                 android:shadowColor="#000000"
                 android:shadowDx="1"
@@ -145,7 +147,8 @@
                     android:padding="15dp"
                     android:text="@string/ic_images"
                     android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:visibility="gone"/>
 
             </RelativeLayout>
 
@@ -165,85 +168,95 @@
                 android:paddingLeft="26dp"
                 android:paddingRight="26dp">
 
-                <TextView
-                    android:id="@+id/save_tv"
+                <LinearLayout
+                    android:id="@+id/save_tv_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/save_text_tv"
-                    android:layout_alignParentStart="true"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="16dp"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/save_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/ic_save"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/save_text_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/save"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/clear_all_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_centerVertical="true"
                     android:gravity="center"
-                    android:text="@string/ic_save"
-                    android:textColor="#FFFFFF"
-                    android:textSize="25sp" />
+                    android:layout_marginEnd="16dp"
+                    android:layout_toEndOf="@id/save_tv_layout">
 
-                <TextView
-                    android:id="@+id/save_text_tv"
+                    <TextView
+                        android:id="@+id/clear_all_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/ic_clear_all"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/clear_all_text_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/clear_all"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/save_tv"
+                    android:orientation="vertical"
                     android:layout_centerVertical="true"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/save"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/clear_all_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/clear_all_text_tv"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_toEndOf="@+id/save_tv"
                     android:gravity="center"
-                    android:text="@string/ic_clear_all"
-                    android:textColor="#FFFFFF"
-                    android:textSize="25sp" />
+                    android:layout_toEndOf="@id/clear_all_layout">
 
-                <TextView
-                    android:id="@+id/clear_all_text_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/clear_all_tv"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_toEndOf="@+id/save_tv"
-                    android:text="@string/clear_all"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/undo_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/ic_clear_all"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp"
+                        android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/undo_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/undo_text_tv"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_toEndOf="@+id/clear_all_tv"
-                    android:gravity="center"
-                    android:text="@string/ic_clear_all"
-                    android:textColor="#FFFFFF"
-                    android:textSize="25sp"
-                    android:visibility="gone" />
+                    <TextView
+                        android:id="@+id/undo_text_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/undo"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/undo_text_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/clear_all_tv"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_toEndOf="@+id/clear_all_tv"
-                    android:text="@string/undo"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp"
-                    android:visibility="gone" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/go_to_next_screen_tv"
