@@ -962,7 +962,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
             }
 
             // Which direction (up or down) is the drag moving?
-            if (dy * (mIsSlidingUp ? 1 : -1) > 0) { // Collapsing
+            if (dy * (mIsSlidingUp ? 1 : -1) > 100) { // Collapsing
                 // Is the child less than fully scrolled?
                 // Then let the child handle it.
                 if (getScrollableViewScrollPosition() > 0) {
@@ -987,7 +987,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
 
                 mIsScrollableViewHandlingTouch = false;
                 return this.onTouchEvent(ev);
-            } else if (dy * (mIsSlidingUp ? 1 : -1) < 0) { // Expanding
+            } else if (dy * (mIsSlidingUp ? 1 : -1) < 100) { // Expanding
                 // Is the panel less than fully expanded?
                 // Then we'll handle the drag here.
                 if (mSlideOffset < 1.0f) {
