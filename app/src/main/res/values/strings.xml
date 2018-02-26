@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">PhotoEditor</string>
     <string name="title_activity_photo_editor">PhotoEditorActivity</string>
-    <string name="done">Done</string>
-    <string name="save">Save</string>
-    <string name="clear_all">Clear All</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="upload_dialog_title">Upload Image</string>
@@ -13,6 +10,8 @@
     <string name="continue_txt">Continue</string>
     <string name="not_now">NOT NOW</string>
     <string name="media_access_denied_msg">You denied storage access, no photos will be added.</string>
+    <string name="choose_from_gallery">Choose From Gallery</string>
+    <string name="choose_from_camera">Choose From Camera</string>
 
     <string name="ic_close">"\ue918"</string>
     <string name="ic_text">"\ue945"</string>
@@ -22,9 +21,10 @@
     <string name="ic_clear_all">"\ue947"</string>
     <string name="ic_continue">"\ue948"</string>
     <string name="ic_delete">"\ue92c"</string>
-    <string name="choose_from_gallery">Choose From Gallery</string>
-    <string name="choose_from_camera">Choose From Camera</string>
     <string name="undo">Undo</string>
     <string name="erase">Erase</string>
+    <string name="done">Done</string>
+    <string name="save">Save</string>
+    <string name="clear_all">Clear All</string>
 
 </resources>
