@@ -204,6 +204,7 @@ public class PhotoEditorSDK implements MultiTouchListener.OnMultiTouchListener {
                 if (parentView != null) {
                     parentView.setDrawingCacheEnabled(true);
                     parentView.getDrawingCache().compress(Bitmap.CompressFormat.JPEG, 80, out);
+                    parentView.setDrawingCacheEnabled(false);
                 }
                 out.flush();
                 out.close();
@@ -212,6 +213,17 @@ public class PhotoEditorSDK implements MultiTouchListener.OnMultiTouchListener {
             }
         }
         return selectedOutputPath;
+    }
+
+    public Bitmap getEditedBitmap() {
+        if (parentView != null) {
+            parentView.setDrawingCacheEnabled(true);
+            Bitmap bitmap = Bitmap.createBitmap(parentView.getDrawingCache());
+            parentView.setDrawingCacheEnabled(false);
+            return bitmap;
+        } else {
+            return null;
+        }
     }
 
     private boolean isSDCARDMounted() {
